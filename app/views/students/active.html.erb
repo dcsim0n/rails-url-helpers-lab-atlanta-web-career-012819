@@ -1,0 +1,13 @@
+<h3>Update status for: <%= @student.to_s %></h3>
+<div>
+    <p>Current Status: <%= @student.active  %></p>
+    <form action="<%= student_path(@student) %>" method="POST" >
+        <input type="hidden" name="_method" value="put">
+        <input type="hidden" name="active" value="<%= !@student.active %>">
+        <% button_action = @student.active ? "De-Activate" : "Activate" %>
+        <input type="submit" value="<%= button_action %>">
+
+    </form>
+
+
+</div>
