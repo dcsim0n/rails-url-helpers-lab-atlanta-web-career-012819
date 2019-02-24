@@ -2,5 +2,8 @@
 <div>
     <p>Last Updated<%= @student.updated_at %>
     </p>
-    <p>Active: <%= @student.active %></p>
+    <p>Active: <%= @student.active ? "Yes" : "No" %></p>
+    <% if @student.active %>
+      <p>This student is currently inactive.</p>
+    <% end %>
 </div>
